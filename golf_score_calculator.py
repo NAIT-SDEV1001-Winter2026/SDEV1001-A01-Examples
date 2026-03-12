@@ -1,3 +1,10 @@
+def calculate_average(*scores):
+    sum = 0
+    for value in scores:
+        sum += value
+    average = sum/(len(scores))
+    return average
+
 print("Golf Score Calculator")
 
 sum = 0
@@ -9,13 +16,11 @@ while True:
     score = input("Enter another score: (q to quit and calculate): ")
     #if q then quit the loop
     if score == "q":
-        break
-    #Add score to a sum
-    sum += int(score)        
+        break            
     scores.append(int(score))
 
 #calculate average
-average = sum/len(scores)    
+average = calculate_average(*scores)    
 #display average
 print(f"Your average golf score is {average}")
 
