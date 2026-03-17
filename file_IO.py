@@ -30,6 +30,36 @@ with open(file_path,"w") as f:
 #In a loop, ask the user for a food_item and add it to the current text file. Keep looping until the user enters "olives"
 #Add the items to what is already on the list
 
+#Reading from a file
+#Use the mode "r"
+#Read all the lines from the file into a list
+try:
+    with open(file_path,"r") as f:
+        new_list = f.readlines()#reads all the lines from the file into a list
+except FileNotFoundError:
+    print("File not found")
 
+print(new_list)
 
+#loop through list
+for item in new_list:
+    print(item.strip())#remove the \n from the row
+
+#Functions for basic file IO
+#Read a file into a list and return the list
+def read_file(file_name):    
+    with open(file_name, "r") as f:
+        new_list = f.readlines()
+    return new_list    
+   
+test_list = read_file(file_path)
+print(test_list)
+
+def add_to_file(file_name,text):
+    with open (file_name,"a") as f:
+        f.write(f"{text}\n")
+
+def write_file(file_name,text):
+    with open (file_name,"w") as f:
+        f.write(f"{text}\n")
 
