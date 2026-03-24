@@ -7,8 +7,7 @@ class Book:
     def __str__(self):
         return f"{self.title} by {self.author}"
     
-book1 = Book("Good stuff", "Shane Bell", 2)
-print(book1)
+
 
 
         
