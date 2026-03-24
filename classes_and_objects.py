@@ -9,6 +9,10 @@
 #Car class
 class Car:
 
+    # Class variables/attribute are shared across all objects from the class
+    wheels = 4
+    #instance variables/attributes belong to one object
+
     #Constructor method - It is called __init__
     #Runs automatically when an object is created from the class
     #self refers to the current object being instantiated(created)
@@ -32,7 +36,17 @@ class Car:
     #return True if all the attributes are the same in both objects being compared
     def __eq__(self,other):
         return self.make == other.make and self.model == other.model and self.year == other.year
+    
+    #Methods(behaviours)
+    #functions that in a class that do things
+    #Honk method
+    def honk(self):
+        print(f"{self.make}, {self.model} says Beep Beep")
 
+    #Method called get_age that returns the age (in years) of the car.Test in mainline 
+    def get_age(self):
+        return 2026 - self.year
+  
 #Mainline
 #Create a car object(an instance of the car class)
 if __name__ == "__main__":
@@ -75,7 +89,21 @@ if __name__ == "__main__":
     else:
         print("not same")
 
+    #additional attribute for one object
+    #not a recomended practice
+    car2.color = "red"
+    print(car2.color)
+    # print(car1.color)
 
+
+    #test class attribute
+    print(car1.wheels)
+    print(car2.wheels)
+
+    #Honk car1 horn
+    car1.honk()
+
+    print(f"{car1.make} is {car1.get_age()} years old")
 
 
 

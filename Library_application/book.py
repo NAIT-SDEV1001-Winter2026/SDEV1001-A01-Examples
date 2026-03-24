@@ -1,0 +1,14 @@
+class Book:
+    def __init__(self, title, author, pages):
+        self.title = title
+        self.author = author
+        self.pages = pages
+    
+    def __str__(self):
+        return f"{self.title} by {self.author}"
+    
+book1 = Book("Good stuff", "Shane Bell", 2)
+print(book1)
+
+
+        
