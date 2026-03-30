@@ -12,8 +12,18 @@ from .library_utilities.book import *#import the book class
 from .library_utilities.library import *#import the library class
 from pathlib import Path
 
-base_dir = Path(__file__).parent
+base_dir = Path(__file__).parent.parent#you can add .parent.parent to go up as many parent folders as you need
 file_path = base_dir/"books.csv"
+
+#OR
+base_dir = Path.cwd()#cwd means current working directory
+#cwd is the location you are executing the application from. 
+#cwd() would give the same directory as .parent.parent
+file_path = base_dir/"books.csv"
+
+print(f"Path to __main__{Path(__file__).parent}")
+print(f"Path to parent of __main__ using parent.parent{Path(__file__).parent.parent}")
+print(f"Path to parent of __main__ using Path.cwd(){Path.cwd()}")
 
 if __name__ == "__main__":
     library1 = Library("NAIT")
